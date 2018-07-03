@@ -1,0 +1,20 @@
+---
+init_config:
+  default_timeout: 60
+
+instances:
+
+  # Include as many instances as needed
+  - host: bigbank.ee
+
+    # Use a long interval in order to avoid spamming the API
+    # How often do your HTTP headers change anyway?
+    min_collection_interval: 86400
+
+    # Hide the checkup from observatory.mozilla.org "recent checks" section?
+    hidden: true
+
+    # Any number of key-value tags to add to reported metrics
+    tags:
+      - app:main-web
+      - env:prod
